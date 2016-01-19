@@ -11,6 +11,7 @@
 * Using `wget`, download your files to the sequence directory on the server.
   * [Detailed walkthrough for wget](./DetailedWalkthroughs/wget.md)
 
+NOTE: At this point, raw read QC analysis can be performed. Refer to the `raw_read_QC` Jupyter Notebook in the `fullCyc` dataset for these commands.
 
 ## Merge Sequences Together 
 
