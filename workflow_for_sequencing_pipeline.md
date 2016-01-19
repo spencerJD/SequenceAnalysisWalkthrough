@@ -9,7 +9,7 @@
   * Forward Reads
   * Reverse Reads
 * Using `wget`, download your files to the sequence directory on the server.
-  * [Detailed walkthrough for wget](./detailed_walkthroughs/wget.md)
+  * [Detailed Walkthrough for `wget`](./detailed_walkthroughs/wget.md)
 
 NOTE: At this point, raw read QC analysis can be performed. Refer to the `raw_read_QC` Jupyter Notebook in the `fullCyc` dataset for these commands.
 
