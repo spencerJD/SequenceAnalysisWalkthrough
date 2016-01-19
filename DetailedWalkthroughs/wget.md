@@ -43,3 +43,18 @@ if not os.path.isdir(seqDir):
     wget -O index2.fq.gz \
     "LINK_TO_INDEX2_FILE_DOWNLOAD"
 ```
+
+####Example Output
+You should expect to see something similar to the following when you download each file.
+```
+--2015-07-02 11:21:22--  http://cbsuapps.tc.cornell.edu/Sequencing/showseqfile.aspx?mode=http&cntrl=1544200496&refid=58068
+Resolving cbsuapps.tc.cornell.edu (cbsuapps.tc.cornell.edu)... 128.84.70.250
+Connecting to cbsuapps.tc.cornell.edu (cbsuapps.tc.cornell.edu)|128.84.70.250|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1019103830 (972M) [application/octet-stream]
+Saving to: `read1.fq.gz'
+
+100%[====================================>] 1,019,103,830 51.6M/s   in 17s     
+
+2015-07-02 11:21:40 (56.2 MB/s) - `read1.fq.gz' saved [1019103830/1019103830]
+```
