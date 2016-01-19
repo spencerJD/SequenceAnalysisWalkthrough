@@ -9,7 +9,7 @@
   * Forward Reads
   * Reverse Reads
 * Using `wget`, download your files to the sequence directory on the server.
-  * [Detailed walkthrough for wget](./DetailedWalkthroughs/wget.md)
+  * [Detailed walkthrough for wget](./detailed_walkthroughs/wget.md)
 
 NOTE: At this point, raw read QC analysis can be performed. Refer to the `raw_read_QC` Jupyter Notebook in the `fullCyc` dataset for these commands.
 
@@ -20,7 +20,7 @@ NOTE: At this point, raw read QC analysis can be performed. Refer to the `raw_re
 * Then we create a screed database to allow to fast access to information about the merged sequences (length, quality, etc.)
 * Finally we run basic quality statistics regarding the quality scores of our sequences. 
 
-[Detailed Walkthrough for `PEAR`](./DetailedWalkthroughs/pear.md)
+[Detailed Walkthrough for `PEAR`](./detailed_walkthroughs/pear.md)
 
 
 
