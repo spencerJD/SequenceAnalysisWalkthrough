@@ -74,5 +74,44 @@ Running this command will result in 4 output files:
 We will be concerned mostly with the assembled reads file for downstream applications.
 
 ###Make a Screed Database of Merged Reads
+A screed database contains sequence information such as sequence name, sequence quality, and the sequence itself in an easily queried format. We will create a screed database using our merged reads for downsream applications.
+
+* Create the screed database
+     ```r
+pear_merged_file = !echo "pear_merged-"$(date +%F)".assembled.fastq"
+pear_merged_file = pear_merged_file[0]
+
+os.chdir(seqDir)
+screed.read_fastq_sequences(pear_merged_file)
+
+pear_merged_file += '_screed'
+fqdb = screed.ScreedDB(pear_merged_file)
+     ```
+
+* Check the lengths of the sequences in your merged sequences file
+
+     ```r
+lengths = []
+for read in fqdb.itervalues():
+    lengths.append((len(read["sequence"])))
+     ```
+
+* Plot a histogram to visually check sequence lengths
+
+     ```r
+style.use("ggplot")
+fig = plt.figure()
+ax = fig.add_subplot(111)
+h = ax.hist(np.array(lengths), bins=50)
+xl = ax.set_xlabel("Sequence Length, nt")
+yl = ax.set_ylabel("Count")
+fig.set_size_inches((10,6))
+     ```
+
+  * Example Output:
+![Sequence Length Histogram](https://cloud.githubusercontent.com/assets/7449496/12431718/03052300-bec5-11e5-871b-b782c7c3c64c.png)
+
+
+
 
 
