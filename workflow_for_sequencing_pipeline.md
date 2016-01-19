@@ -15,6 +15,13 @@ NOTE: At this point, raw read QC analysis can be performed. Refer to the `raw_re
 
 ## Merge Sequences Together 
 
+* `PEAR` is used to merge sequences from Read1 and Read2 together, while updating the quality scores of bases based on the overlapping region.
+* First, we run `PEAR` in order to merge reads 1 and 2 together.
+* Then we create a screed database to allow to fast access to information about the merged sequences (length, quality, etc.)
+* Finally we run basic quality statistics regarding the quality scores of our sequences. 
+
+[Detailed Walkthrough for `PEAR`](./DetailedWalkthroughs/pear.md)
+
 
 
 
