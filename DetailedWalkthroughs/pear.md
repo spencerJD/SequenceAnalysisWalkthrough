@@ -156,7 +156,8 @@ ggplot(tbl.r12, aes(x=column, y=med, ymin=Q1, ymax=Q3)) +
     theme( text = element_text(size=16) )
      ```
 
-
+  * Example Output:
+     ![Merged Read Quality Score Plot](https://cloud.githubusercontent.com/assets/7449496/12432307/95dec430-bec8-11e5-810e-0c81872f5e16.png)
 
 
 
