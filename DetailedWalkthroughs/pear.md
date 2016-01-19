@@ -111,6 +111,52 @@ fig.set_size_inches((10,6))
   * Example Output:
 ![Sequence Length Histogram](https://cloud.githubusercontent.com/assets/7449496/12431718/03052300-bec5-11e5-871b-b782c7c3c64c.png)
 
+* Check the total number of merged sequences in your file
+
+     ```python
+print 'Number of reads: {}'.format(len(lengths))
+     ```
+
+###Perform Quality Statistics on Merged Reads
+In this section, we will look at the median quality scores for each position in our sequences. To do this, we run the `fastx_quality_stats` function on our merged sequence fastq file and plot the median quality score for each base.
+
+* First, create the `qualStats` function in your Jupyter notebook, and run this function on your merged fastq file.
+
+     ```r
+def qualStats(sourceDir, fileName):
+    outFile = fileName + '_qualStats'
+    !cd $sourceDir; \
+        fastx_quality_stats -i $fileName -o $outFile -Q 33
+    return outFile
+    
+qualStatsRes = qualStats(seqDir, 'pear_merged-YYYY-MM-DD.assembled.fastq')
+     ```
+  * NOTE: Your file name will be different based on the date you ran `PEAR`, and will need to be substituted in the code above.
+
+* Next, you will read in the qual-stats files and plot the median quality score values
+
+     ```r
+%%R -i seqDir -i qualStatsRes
+
+setwd(seqDir)
+
+# reading in qual-stats files    
+tbl.r12 = read.delim(qualStatsRes, sep='\t')
+rownames(tbl.r12) = 1:nrow(tbl.r12)
+     ```
+
+     ```r
+%%R -w 800 -h 300
+# smooth curve on median qual values
+ggplot(tbl.r12, aes(x=column, y=med, ymin=Q1, ymax=Q3)) +
+    geom_smooth(se=FALSE) +
+    geom_linerange(alpha=0.3) +
+    labs(x='position', y='median quality score') +
+    theme_bw() +
+    theme( text = element_text(size=16) )
+     ```
+
+
 
 
 
