@@ -22,6 +22,8 @@ NOTE: At this point, raw read QC analysis can be performed. Refer to the `raw_re
 
 [Detailed Walkthrough for `PEAR`](./detailed_walkthroughs/pear.md)
 
-
+## Demultiplex Sequences
+* At this stage, your sequences will be separated by their index reads.
+* A mapping file is needed to assign sample names based on the index sequences. 
 
 
